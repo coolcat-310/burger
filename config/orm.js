@@ -3,7 +3,7 @@
  */
 
 var connection = require("./connection.js");
-
+var table = require('console.table');
 var orm = {
     selectAll: function(callback) {
         var queryString = "SELECT * FROM burgers";
@@ -11,8 +11,8 @@ var orm = {
             if (err) {
                 throw err;
             }
-            console.log(result);
-            //callback(result);
+            console.table(result);
+            callback(result);
         });
     },
     insertOne: function(myObj, callback) {
@@ -26,16 +26,16 @@ var orm = {
             devoured: false,
             myDate: myObj.date
         }, function(err, result) {
-            console.log(result);
-            //callback(result);
+            console.table(result);
+            callback(result);
         });
     },
-    updateOne: function(column1, value1, column2, value2, callback){
-        var queryString = "UPDATE burgers SET ?? = ? WHERE ?? = ?";
+    updateOne: function(idVal, callback){
+        var queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
         console.log(queryString);
-        connection.query(queryString, [column1, value1, column2, value2], function(err, result) {
-            console.log(result);
-            //callback(result);
+        connection.query(queryString, [idVal], function(err, result) {
+            console.table(result);
+            callback(result);
         });
     }
 };

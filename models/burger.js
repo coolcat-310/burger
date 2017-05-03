@@ -15,8 +15,8 @@ var burger = {
             callback(res)
         });
     },
-    updateOne: function(myObj, callback){
-        orm.updateOne(myObj.column1, myObj.value1, myObj.column2, myObj.value2, function(res){
+    updateOne: function(idVal, callback){
+        orm.updateOne(idVal, function(res){
             callback(res);
         });
     }
