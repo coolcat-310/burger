@@ -15,13 +15,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use('/', router);
 
 
 
 
-app.listen(port, function() {
+app.listen(PORT, function() {
     console.log("Listening on PORT " + port);
 });
