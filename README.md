@@ -18,7 +18,7 @@ The model used for the back-end is a MVC type.
 
 ## Live Link
 
-- comming soon
+- https://jn-burger-mania.herokuapp.com/
 
 ## Resources
 
