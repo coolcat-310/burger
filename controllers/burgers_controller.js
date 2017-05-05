@@ -9,15 +9,15 @@ var router = express.Router();
 var b = require('../lib/burgers');
 
 router.get('/', function (req,res) {
-    b.getAllBurgers(function(burgers){
-        res.render('index', {burgers: burgers});
-    });
-    // burger.selectAll(function(data){
-    //    var myBurgers = {
-    //        burgers: data
-    //    };
-    //     res.render('index', myBurgers);
+    // b.getAllBurgers(function(burgers){
+    //     res.render('index', {burgers: burgers});
     // });
+    burger.selectAll(function(data){
+       var myBurgers = {
+           burgers: data
+       };
+        res.render('index', myBurgers);
+    });
 });
 
 router.post('/burger/eat/:id', function(req, res) {
