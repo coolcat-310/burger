@@ -4,8 +4,8 @@
 
 var express = require("express");
 var bodyParser = require("body-parser");
-//var methodOverride = require("method-override");
-//var path = require("path");
+var methodOverride = require("method-override");
+var path = require("path");
 var exphbs = require('express-handlebars');
 var router = require('./controllers/burgers_controller');
 var app = express();
