@@ -23,9 +23,6 @@ router.get('/', function (req,res) {
 router.post('/burger/eat/:id', function(req, res) {
     var idVal = parseInt(req.params.id);
     burger.updateOne(idVal, function(data){
-        var myBurgers = {
-            burgers: data
-        };
         res.redirect('/');
     });
 });
@@ -38,18 +35,13 @@ router.post('/burger/add', function (req, res) {
     console.log(myObj);
     console.log(req.body);
     burger.insertOne(myObj, function (data) {
-        var myBurgers = {
-            burgers: data
-        };
         res.redirect('/');
     });
 });
 
 router.post('/burger/delete', function(req, res){
     burger.deleteAll(function(data){
-        var myBurgers = {
-            burgers: data
-        };
+
         res.redirect('/');
     });
 });
