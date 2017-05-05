@@ -23,5 +23,5 @@ app.use('/', router);
 
 
 app.listen(PORT, function() {
-    console.log("Listening on PORT " + port);
+    console.log("Listening on PORT " + PORT);
 });
