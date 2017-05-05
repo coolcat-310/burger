@@ -15,17 +15,17 @@
             <tbody>
             {{#each burgers}}
                 {{#unless devoured}}
-                    <form action="burger/eat/{{id}}" method="POST">
-                        <th scope="row" class="green">{{this.id}}</th>
-                        <th class="green">{{this.burger_name}}</th>
-                        <th class="green ">{{this.devoured}}</th>
-                        <th class="green">{{this.myDate}}</th>
-                        <th>
-                            <button id="{{this.id}}" type="submit" class="btn btn-primary">Eat Me</button>
-                        </th>
-
-
-                    </form>
+                    <tr>
+                        <form action="burger/eat/{{id}}" method="POST">
+                            <th scope="row" class="green">{{this.id}}</th>
+                            <th class="green">{{this.burger_name}}</th>
+                            <th class="green ">{{this.devoured}}</th>
+                            <th class="green">{{this.myDate}}</th>
+                            <th>
+                                <button id="{{this.id}}" type="submit" class="btn btn-primary">Eat Me</button>
+                            </th>
+                        </form>
+                    </tr>
                 {{/unless}}
             {{/each}}
             </tbody>

@@ -37,7 +37,19 @@ var orm = {
             console.table(result);
             callback(result);
         });
+    },
+    deleteAll: function(callback){
+        var queryString = "TRUNCATE TABLE burgers";
+        console.log(queryString);
+        connection.query(queryString, function(err, result){
+            if(err){
+                throw err;
+            }
+           console.table(result);
+           callback(result);
+        });
     }
+
 };
 
 module.exports = orm;

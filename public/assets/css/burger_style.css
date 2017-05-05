@@ -34,3 +34,7 @@ body{
 thead{
     background-color: azure;
 }
+
+#delete-button{
+    margin-left: 5%;
+}

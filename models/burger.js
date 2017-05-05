@@ -19,6 +19,11 @@ var burger = {
         orm.updateOne(idVal, function(res){
             callback(res);
         });
+    },
+    deleteAll: function(callback){
+        orm.deleteAll(function(res){
+            callback(res);
+        });
     }
 };
 
